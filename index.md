@@ -1,165 +1,801 @@
----
-home: true
-description: 'bluuweb es un canal de youtube dedicado a la entrega de tutoriales y cursos sobre el desarrollo web.'
-lang: en-ES
-heroImage: /jim.gif
-tagline: Bienvenidos a un nuevo video tutorial... 😍
-actionText: Cursos en Youtube
-actionLink: https://bit.ly/3kLYAqr
-features:
-- title: Paso a paso
-  details: Tutoriales desde cero y sin conocimientos previos
-- title: Guías gratuitas
-  details: Explora definiciones y códigos implementados
-- title: Actualizaciones
-  details: Todos los meses tutoriales y cursos nuevos!
-footer: Sitio creado con mucho cariño por bluuweb! ❤️
----
+## Mi servidor NODE ❤️
 
-## Lista de cursos y tutoriales
-Una forma fácil de acceder a los contenidos de <b>bluuweb!</b> 👇🏼👇🏼👇🏼
+Pruebo mi servidor con:
+~~~
+npm run devbabel
+~~~
 
-## Preguntas y Respuestas
-- [https://discord.gg/xSceUPh](https://discord.gg/xSceUPh)
+### Crear mi servidor node
 
-## HTML y CSS
-- [HTML y CSS - Curso desde cero](https://www.youtube.com/watch?v=rr2H086z16s&list=PLPl81lqbj-4LKo66cEts5yC_AjOvqKptm)
-- [CSS - Flexbox](https://www.youtube.com/watch?v=6xfhD0t5IdU&list=PLPl81lqbj-4JfZ9Ln5ojAl1GiORf2aK9U)
-- [CSS - GRID](https://www.youtube.com/watch?v=n1Lnar9mTF8&list=PLPl81lqbj-4Iyfgr2Arl-P507UsR910xf)
-- [Menú HTML, CSS y JS - Navbar Responsive](https://www.youtube.com/watch?v=GVjgi3Fg4Xg&list=PLPl81lqbj-4K8_EFHULcpQMjBLHcp8J01)
-- [Convertir PSD a HTML](https://www.youtube.com/watch?v=lvKU_BPcAU0&list=PLPl81lqbj-4Lnt3_n-IUWjF4EtLofhLRw)
+Seguir pasos: https://bluuweb.github.io/mevn/01-primeros-pasos/#crear-servidor
 
-## Desafíos [FrontEnd]
-Cuando realizamos proyectos es cuando más aprendemos, te invito a explorar una serie de desafíos utilizando HTML, CSS y JavaScript. ¡Vamos a escribir código! 🎉 Puedes explorar e intentar desafíos aquí: [https://www.frontendmentor.io/challenges](https://www.frontendmentor.io/challenges)
-
-### Nivel "Novato"
-- [Card HTML y CSS](https://youtu.be/Xe_qNR1mmCg)
-  - [guía](https://bluuweb.github.io/practicas/03-card/)
-
-### Nivel "Junior"
-- [Dark Mode - Tema Oscuro con CSS y JS](https://youtu.be/3V8E57ChrKM)
-  - [guía](https://bluuweb.github.io/practicas/02-dark-mode/)
-
-### Nivel "Intermedio"
-- [ToDo List - HTML, JS y LocalStorage](https://youtu.be/DEbNCqe2e2U)
-  - [guía](https://bluuweb.github.io/javascript/02a-todo/)
-- [Carrito de compras (addEventListener + Fragment + Template + LocalStorage)](https://youtu.be/JL7Wo-ASah4)
-  - [guía](https://bluuweb.github.io/javascript/02-dom/#practica-template)  
-
-### Nivel "Avanzado"
-- [REST Countries API](https://www.youtube.com/watch?v=TLKQacsLroo)
-  - [guía](https://bluuweb.github.io/practicas/01-api-paises)
-- [ToDo con Vue.js + Composition API](https://youtu.be/76epsLAAOdQ)
-  - [guía](https://bluuweb.github.io/javascript/02b-todo-vue/)
-
-### Nivel "Gurú"
-- Próximamente...
-
-## Framework y Herramientas CSS
-- [Bootstrap 4 - Fundamentos](https://www.youtube.com/watch?v=z7ecV0tL1Gg)
-- [Tailwind CSS - Curso desde cero](https://www.youtube.com/watch?v=3xlUAMXui2c&list=PLPl81lqbj-4JdoHDiERR2ptkw9zRggXAL)
-  - [guía](https://bluuweb.github.io/tailwindcss/)
-- [Materialize CSS](https://www.youtube.com/watch?v=YJKWkUi2r5g&list=PLPl81lqbj-4J2Lbx1_qp7Yzo7wvjYiQ4E)
-- [Sass - Curso desde cero](https://www.youtube.com/watch?v=Nro1WwTdCK4&list=PLPl81lqbj-4I4VwUdjbV2iFg7wispiXKP)
-
-## JavaScript
-- [¿No sabes nada de programación? Comienza aquí](https://www.youtube.com/playlist?list=PLPl81lqbj-4KAyrmUlEE9dPWN2oLhC5Wy)
-- [Fundamentos de programación en Javascript](https://youtu.be/Zwcqq-7IDI0)
-- [JavaScript Moderno - Fundamentos](https://www.youtube.com/watch?v=Z4TuS0HEJP8&list=PLPl81lqbj-4I2ZOzryjPKxfhK3BzTlaJ7)
-  - [guía](https://bluuweb.github.io/javascript/fundamentos/)
-- [JavaScript Moderno - DOM](https://www.youtube.com/watch?v=11MEBKljhFc&list=PLPl81lqbj-4I2ZOzryjPKxfhK3BzTlaJ7&index=2)
-  - [guía](https://bluuweb.github.io/javascript/02-dom/)
+* Crear una carpeta en alguna parte de tu computador
+* Arrastrar dicha carpeta a Visual Studio Code
+* Ejecutar un nuevo proyecto de Node.js
+~~~
+npm init --yes
+~~~
 
 
-## JavaScript Conceptos
-- [AJAX](https://www.youtube.com/watch?v=1kA4DowJs08&list=PLPl81lqbj-4L6JypMCzyMqZ0v87dltjqD)
-- [Async & Await con Fetch o Axios](https://youtu.be/stiPdlSkTOI)
-- [Fetch API - alternativa Ajax](https://www.youtube.com/playlist?list=PLPl81lqbj-4JXPTIPbIvWED-xTVmOzhrf)
+### Instalar Express.js 
+~~~
+npm install express --save
+~~~
+#### Crear archivo app.js
+~~~
+const express = require('express');
+const app = express();
 
-## JQuery
-- [JQuery - Curso desde cero](https://www.youtube.com/watch?v=DVN8NWppCN0)
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
 
-## Vue
-- [Vue.js - Curso desde cero](https://www.youtube.com/watch?v=GAQB7Y4X5fM&list=PLPl81lqbj-4J-gfAERGDCdOQtVgRhSvIT)
-- [Nuxt - Curso desde cero](https://www.youtube.com/watch?v=kekz0zXRxAM)
-- [Vue.js + Wordpress API](https://www.youtube.com/watch?v=NBWRdxDhE6k)
-  - [guía](https://bluuweb.github.io/vuetify/wordpress-api/)
-- [Vuetify - Curso desde cero](https://www.youtube.com/watch?v=WH1UrK_s_Ew&list=PLPl81lqbj-4JZgB4Oapr1lRrzpAqQ4mBL)
-- [Vuetify + Calendario + Firebase](https://www.youtube.com/watch?v=I_rJi_Mkx7o)
-  - [guía](https://bluuweb.github.io/vuetify/calendario/)
-- [MEVN - Node.js + Express + MongoDB + Vue.js](https://www.youtube.com/watch?v=E57J73MzOEc&list=PLPl81lqbj-4KmEokV2b5tRtpBVgEVm0Nz)
-  - [guía](https://bluuweb.github.io/mevn/01-primeros-pasos/)
-- [Comsumir API REST con Vue.js 3](https://youtu.be/QUZrjnprVQU)
-- [Vuex y Composition API](https://youtu.be/eIAZAhYYiJI)
-  - [guía](https://bluuweb.github.io/javascript/03-vue-carrito/)
-- [Quasar - App iOS & Android](https://www.youtube.com/watch?v=AFMDrML0aOQ&list=PLPl81lqbj-4IWs5u8bDk17gyML-unxXPw)
-  - [guía](https://bluuweb.github.io/quasar/)
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
+});
+~~~
+La aplicación inicia un servidor y escucha las conexiones en el puerto 3000. La aplicación responde con “Hello World!” para las solicitudes al URL raíz (/) o a la ruta raíz. Para cada vía de acceso diferente, responderá con un error 404 Not Found.
 
-## React
-- [React.js - Curso desde cero](https://www.youtube.com/watch?v=Di4eAxkPNp0&list=PLPl81lqbj-4KswGEN6o4lF0cscQalpycD)
-  - [guía](https://bluuweb.github.io/react-udemy/)
-- [React.js - Material UI](https://www.youtube.com/watch?v=-ipl60m5eQA&list=PLPl81lqbj-4Kn-PRUvHuzh_591Euc3688)
-  - [guía](https://bluuweb.github.io/react-udemy/13-material)
-- [React.js - Tailwind css](https://www.youtube.com/watch?v=o9DjWGp9HiE)
-  - [guía](https://bluuweb.github.io/tailwindcss/06-react/) 
+A continuación, cargue http://localhost:3000/ en un navegador para ver la salida.
+//Para que detecte los cambios nuestro servidor podemos instalar https://www.npmjs.com/package/nodemon
+~~~
+npm install -g nodemon
+~~~
+Configurar nuevo script en el apartado "scripts" en package.json
+~~~
+"dev": "nodemon app.js"
+~~~
+Ahora ejecutar:
+~~~
+npm run dev
+~~~
+Asignar puerto automáticamente:
+~~~
+app.set('puerto', process.env.PORT || 3000);
+app.listen(app.get('puerto'), function () {
+  console.log('Example app listening on port'+ app.get('puerto'));
+});
+~~~
+#### Instalo morgan para ver por terminal las peticiones que se hacen (que alguien ha accedido): 
+~~~
+npm i morgan --save
+~~~
+En mi app.js incluyo:
+~~~
+const morgan = require('morgan');
+~~~
+Con lo siguiente express utiliza morgan
+~~~
+app.use(morgan('tiny'));
+~~~
+#### Instalar CORS
+~~~
+npm install cors --save
+~~~
+Enable All CORS Requests
+~~~
+const cors = require('cors');
+app.use(cors());
+~~~
+#### Instalar JSON y urlencoded (porque vamos a usar JSONS)
+Espress ya tiene instalado esto por eso sólo lo configuramos:
+~~~
+app.use(express.json());
 
-## Angular
-- [Angular - Curso desde cero](https://www.youtube.com/watch?v=mog8EKQX5HI&list=PLPl81lqbj-4JaLibWSbTVrYTyHDadppKq)
-- [Ionic - App móvil](https://www.youtube.com/watch?v=IZVhMPSfqAQ&list=PLPl81lqbj-4IzylAHYigeNB_Pob2WGGEG)
+//application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }))
+~~~
 
-## Node.js
-- [Node.js - Curso desde cero](https://www.youtube.com/watch?v=mG4U9t5nWG8&list=PLPl81lqbj-4IEnmCXEJeEXPepr8gWtsl6)
-  - [Guía](https://bluuweb.github.io/node/)
-- [Node.js - Express y HBS](https://youtu.be/0YX-vdMoBEg)
-  - [guía](https://bluuweb.github.io/node/20-hbs/)
-- [Login con JWT](https://youtu.be/KVhf_TE0D78)
-  - [guía](https://bluuweb.github.io/node/07-jwt/)
-- [MEVN - Node.js + Express + MongoDB + Vue.js](https://www.youtube.com/watch?v=E57J73MzOEc&list=PLPl81lqbj-4KmEokV2b5tRtpBVgEVm0Nz)
-  - [guía](https://bluuweb.github.io/mevn/01-primeros-pasos/)
+Ahora vamos a configurar una ruta estática porque lo que ahora es hola mundo, después será todo el vue
 
-## Firebase
-- [Firebase y Firestore - Bases de datos en tiempo real](https://www.youtube.com/watch?v=gsePWTrOCZE&list=PLPl81lqbj-4JiR1Cio6xEygCZDmZmDUWI)
-- [Chat App con Firestore](https://www.youtube.com/watch?v=pnLHUyO96QA&list=PLPl81lqbj-4K4bSaIziJsu3GtCiytRpEL)
-  - [guía](https://bluuweb.github.io/javascript/chat/)
-- [Api REST con Firebase](https://youtu.be/LE5Vd83Ed0I)
+#### Creo la carpeta public
+* Creo una carpeta llamada public al mismo nivel que app.js (es donde irá toda mi aplicación de view)
 
-## PHP
-- [PHP y MySql](https://www.youtube.com/playlist?list=PLPl81lqbj-4IGS74m9lv1zLOWJzsLjWC_)
-- [Creación de temas Wordpress con Bootstrap 4](https://www.youtube.com/watch?v=yxszEbzl4gY&list=PLPl81lqbj-4I8FzPNr03cQjyReh6UkSSl)
+* En app.js pondremos para indicarle que utilize la ruta actual (ahora es local, pero después será el servidor)
 
-## Laravel
-- [Laravel - Curso desde cero](https://www.youtube.com/watch?v=KKpXpWCTlbo&list=PLPl81lqbj-4KHPEGngoy5PSjjxcwnpCdb)
-  - [guía](https://bluuweb.github.io/tutorial-laravel/)
-- [Laravel + Vue.js + Auth/login](https://www.youtube.com/watch?v=QW4dMbFxv3c)
-  - [guía](https://bluuweb.github.io/tutorial-laravel/vue/)
+* Para acceder al directorio actual
+const path = require('path');
 
-## Git y Github
-- [Git y Github - Curso desde cero](https://www.youtube.com/watch?v=hWglK8nWh60&list=PLPl81lqbj-4I8i-x2b5_MG58tZfgKmJls)
-  - [guía](https://bluuweb.github.io/tutorial-github/guia/)
+#### History Vue.js
+Vue.js utiliza el modo History para simular las rutas de un sitio web, ya que al ser SPA es un simple HTML, esto nos puede traer problemas con Express por lo tanto agregaremos otro Middleware de configuración.
+~~~
+npm install --save connect-history-api-fallback
+~~~
+Y ahora pondremos lo siguiente en app.js (justo antes de: app.use(express.static(path.join(__dirname, 'public')));)IMPORTANTE
 
-## Otros
-- [WebPack - Curso desde cero](https://www.youtube.com/watch?v=sbrKeDhYev8)
-  - [guía](https://bluuweb.github.io/webpack/)
-- [Babel](https://www.youtube.com/watch?v=sbrKeDhYev8)
-  - [guía](https://bluuweb.github.io/webpack/babel/)
-- [Parcel.js](https://www.youtube.com/watch?v=YnZ883a7XP0)
-  - [guía](https://bluuweb.github.io/webpack/parcel-js/)
+#### Middleware para Vue.js router modo history
+~~~
+const history = require('connect-history-api-fallback');
+app.use(history());
+~~~
+Ahora se reordena para que esté justo debajo de app.get('/', function (req, res) { res.send('Hello World!');
+});
+
+#### En resumen nuestro archivo app.js debería ir quedando así:
+~~~
+const express = require('express');
+const morgan = require('morgan');
+const cors = require('cors');
+const path = require('path');
+
+const app = express();
+
+// Middleware
+app.use(morgan('tiny'));
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+//app.use(express.static(path.join(__dirname, 'public')));
+
+// Rutas
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
+
+// Middleware para Vue.js router modo history
+const history = require('connect-history-api-fallback');
+app.use(history());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.set('puerto', process.env.PORT || 3000);
+app.listen(app.get('puerto'), function () {
+  console.log('Example app listening on port'+ app.get('puerto'));
+});
+~~~
+#### Instalamos babel para trabajar con las últimas versiones de json
+
+~~~
+npm install -D @babel/core @babel/cli @babel/preset-env @babel/node
+~~~
+Crear archivo .babelrc en la raíz del sistema con:
+~~~
+{
+  "presets": ["@babel/preset-env"]
+}
+~~~
+
+y en package.js, y reemplazo el objeto de script por esto:
+~~~
+"scripts": {
+  "dev": "nodemon app.js",
+  "devbabel": "nodemon app.js --exec babel-node"
+},
+~~~
+Una vez hecho esto, podemos ELIMINARLO TODO Y PONERLO EN JS a ES6:
+~~~
+import express from 'express';
+import morgan from 'morgan';
+import cors from 'cors';
+import path from 'path';
+
+const app = express();
+
+// Middleware
+app.use(morgan('tiny'));
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+// app.use(express.static(path.join(__dirname, 'public')));
+
+// Rutas
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+// Middleware para Vue.js router modo history
+const history = require('connect-history-api-fallback');
+app.use(history());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.set('puerto', process.env.PORT || 3000);
+app.listen(app.get('puerto'), () => {
+  console.log('Example app listening on port'+ app.get('puerto'));
+});
+~~~
+
+#### Pruebo mi servidor con:
+~~~
+npm run devbabel
+~~~
+## Ahora lo pongo todo en un servidor gratis!!! que permite trabajar con nodejs
+
+https://id.heroku.com/login
+
+* Una vez ahí creo mi app y me lleva a "deploy donde le digo deployment method Heroku git"
+
+* Sólo la primera vez instalar heroku cli:
+
+https://devcenter.heroku.com/articles/heroku-cli
+
+* Ahora hago:
+~~~
+$ heroku login
+~~~
+* Entonces me lleva a login
+* vamos a nuestro proyecto de back
+* Creamos archivo .gitignore
+* incluimos en el archivo:
+~~~
+node_modules
+~~~
+* iniciamos git con:
+~~~
+git init
+~~~
+y también ponemos en terminal:
+~~~
+heroku git:remote -a mi-primer-node
+~~~
+* incluimos en el package.json, en scripts (ponerlo el primero de la ista de scripts):
+~~~
+"start": "babel-node app.js --exec",
+~~~
+en el mismo package.json, copio todo lo que hay dentro de devdependencias (desarrollo) y lo pego en dependencias(produccion):
+~~~
+"@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/node": "^7.14.5",
+    "@babel/preset-env": "^7.14.5"
+~~~
+* hago un git add (o lo hago desde vs) y hago commit
+
+* ahora hago:
+~~~
+git push heroku master
+~~~
+* Vamos a las bases de datos:
+
+### Instalamos mongoose que nos ayuda:
+~~~
+npm install mongoose --save
+~~~
+* En nuestro app.js configurar https://mongoosejs.com/docs/connections.html#callback 
+
+y escogemos el de promesa que pondremos en app.js junto con la importanción de mongoose:
+
+~~~
+// DB Conection
+import mongoose from 'mongoose';
+
+mongoose.connect(uri, options).then(
+  () => { console.log('Conectado a MongoDB')},
+  err => { err}
+);
+~~~
+* AHORA justo debajo DE import mongoose from 'mongoose' creamos la const uri (será igual a la url de nuestra base de datos):
+~~~
+const uri = 'mongodb://localhost:27017/<nombre base de datos>'; //de momento pongo mi máquina
+~~~
+
+#### Mi database
+(Ver tutorial aquí https://www.youtube.com/watch?v=IpQSsb-1N1g&list=PLPl81lqbj-4IEnmCXEJeEXPepr8gWtsl6&index=13&ab_channel=Bluuweb%21Bluuweb%21Verificada)
+
+* Ir a: https://bluuweb.github.io/node/05-db/#:~:text=https%3A//cloud.mongodb.com/
+
+* Para entrar donde están mis database ir a Browser collections
+
+* Una vez creado el cluster voy al botón "collections:
+
+* Le damos a "create database"
+
+* DataBase name: pe, veterinaria
+* Collection name: pe, mascotas
+
+* Le damos a crear
+
+* Hago click sobre el título y le doy a "insertar documento"
+
+* Creamos usuario y password en security/Database access
+
+Y colocamos en app.js encima de const Uri:
+~~~
+const user= '';
+const password= '';
+~~~
+El uri lo obtengo en Cluster, botón connect, conect your aplicación y cojo esto (o parecido):
+mongodb+srv://minode-9090:<password>@cluster0.ap7e3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+Y lo pego en mi app.js:
+~~~
+const uri = `mongodb+srv://minode-9090:<password>@cluster0.ap7e3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+~~~~~~
+Quedará así:
+~~~
+// DB Conection
+import mongoose from 'mongoose';
+
+const user = 'minode-9090';
+const password = 'MG20070831';
+const uri = `mongodb+srv://${user}:${password}@cluster0.ap7e3.mongodb.net/prueba?retryWrites=true&w=majority`;
+const options = { useNewUrlParser: true, useUnifiedTopology: true };
+mongoose.connect(uri, options).then(
+  () => { console.log('Conectado a MongoDB')},
+  err => { console.log(err) }
+);
+// Estoy conectado a mongo?? 0: disconnected, 1: connected, 2: connecting, 3: disconnecting
+console.log(mongoose.connection.readyState);
+~~~
+
+__________________________
+
+//Schemas
+
+En la raiz Creo la carpeta "models"
+
+Y dentro de ella un js con el nombre de lo que contenga nuestra database, pe, nota.js y en ella pongo algo así:
+
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
+
+const notaSchema = new Schema({
+//Nombre es obligatorio y saltará el error Nombre obligatorio
+  nombre: {type: String, required: [true, 'Nombre obligatorio']},
+  descripcion: String,
+  usuarioId: String,
+  date:{type: Date, default: Date.now},
+  activo: {type: Boolean, default: true}
+});
+
+// Convertir a modelo
+const Nota = mongoose.model('Nota', notaSchema);
+
+export default Nota;
+_______________________
+
+Ahora creo las rutas:
+
+- Rutas (POST)
+
+Creo una carpeta en raiz llamada "routes" y creo un js con el mismo nombre que llamé al modelo y pongo esto:
+
+import express from 'express';
+const router = express.Router();
+
+// importar el modelo nota
+import Nota from '../models/nota';
+
+// Agregar una nota
+router.post('/nueva-nota', async(req, res) => {
+  const body = req.body;  
+  try {
+    const notaDB = await Nota.create(body);
+    res.status(200).json(notaDB); 
+  } catch (error) {
+    return res.status(500).json({
+      mensaje: 'Ocurrio un error',
+      error
+    })
+  }
+});
+
+// Exportamos la configuración de express app
+module.exports = router;
+
+Me voy a mi app.js y coloco en las rutas, para llamar a la ruta que he creado
+
+app.use('/api', require('./routes/nota'))
+
+// Get con parámetros
+router.get('/nota/:id', async(req, res) => {
+  const _id = req.params.id;
+  try {
+    const notaDB = await Nota.findOne({_id});
+    res.render("mascotas", {
+            listaMascotas: "Aquí irán todas las mascotas",
+            arrayMascotas
+   })
+  } catch (error) {
+    return res.status(400).json({
+      mensaje: 'Ocurrio un error',
+      error
+    })
+  }
+});
+
+// Get con todas las Recetas (en este caso)
+router.get('/recetas', async(req, res) => {
+    try {
+      const recetaDb = await Receta.find();
+      res.json(recetaDb);
+    } catch (error) {
+      return res.status(400).json({
+        mensaje: 'Ocurrio un error',
+        error
+      })
+    }
+  });
+// Delete eliminar una nota
+router.delete('/nota/:id', async(req, res) => {
+  const _id = req.params.id;
+  try {
+    const notaDb = await Nota.findByIdAndDelete({_id});
+    if(!notaDb){
+      return res.status(400).json({
+        mensaje: 'No se encontró el id indicado',
+        error
+      })
+    }
+    res.json(notaDb);  
+  } catch (error) {
+    return res.status(400).json({
+      mensaje: 'Ocurrio un error',
+      error
+    })
+  }
+});
+
+// Put actualizar una nota
+router.put('/nota/:id', async(req, res) => {
+  const _id = req.params.id;
+  const body = req.body;
+  try {
+    const notaDb = await Nota.findByIdAndUpdate(
+      _id,
+      body,
+      {new: true});
+    res.json(notaDb);  
+  } catch (error) {
+    return res.status(400).json({
+      mensaje: 'Ocurrio un error',
+      error
+    })
+  }
+});
+
+//USO VARIABLES DE ENTORNO:https://bluuweb.github.io/node/05-db/#varibles-de-entorno
+
+Instalo: npm i dotenv
+
+https://www.npmjs.com/package/dotenv
+
+En el app.js debería poner después de importar express:
+
+require('dotenv').config()
+
+//Creo en la raíz el directorio .env
+
+Y pongo: 
+
+PORT=3000 (el puerto que haya puesto)
+USUARIO=xxx
+PASSWORD=xxx
+DBNAME=xxx
+
+Depues hago los cambios en app.js
+
+const uri = `mongodb+srv://${process.env.USUARIO}:${process.env.PASSWORD}@cluster0.ncdk5.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
+
+//e INCLUYO EL .ENV EN GITINGNORE
+
+node_modules
+.env
+
+Puedes poner las variables de entorno en el servidor heroku: https://devcenter.heroku.com/articles/config-vars
+
+iNSTALAMOS para utilizar x-www-form-urlencoded: npm i body-parser
 
 
-## ¿Quieres apoyar a bluuweb? 😍
+Añado en app.js:
 
-Tienes varias jugosas alternativas:
-1. [Suscríbete al canal de Youtube (es gratis) click aquí](https://bit.ly/3kLYAqr)
-2. Si estás viendo un video no olvides regalar un 👍 like y comentario 🙏🏼
-2. También puedes ser miembro del canal de [Youtube (click aquí)](https://www.youtube.com/channel/UCH7IANkyEcsVW_y1IlpkamQ/join)
-3. Dona un cafecito ☕ para bluuweb: [https://www.paypal.me/bluuweb](https://www.paypal.me/bluuweb)
-3. Puedes adquirir cursos premium en Udemy 👇🏼👇🏼👇🏼
+import bodyParser from 'body-parser';
 
-[<img :src="$withBase('/vue-js.jpg')">](http://curso-vue-js-udemy.bluuweb.cl)
-[<img :src="$withBase('/react-js.jpg')">](http://curso-react-js-udemy.bluuweb.cl)
-[<img :src="$withBase('/bootstrap.jpg')">](http://curso-bootstrap-4-udemy.bluuweb.cl)
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
 
-## Próximamente
-Estoy cocinando nuevos videos tutoriales y cursos 😜
+Recordar!!! Comentar las rutas de hello world de node y poner en su lugar: 
+
+app.use('/api', require('./routes/nota'))
+
+Autenticación:
+
+Creo un nuevo modelo llamado user (en models, donde ja está el de receta)
+
+Importo mongoose y el esquema:
+
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
+
+__________
+
+Y creo la constante del esquema de user:
+
+const userSchema = new Schema({
+//Nombre es obligatorio y saltará el error Nombre obligatorio
+  nombre: {type: String, required: [true, 'Nombre obligatorio']},
+  email: { type: String, unique: true, required: [true, 'Email es necesario'] },
+  pass: { type: String, required: [true, 'Pass es necesario'] },
+  date: { type: Date, default: Date.now },
+  // Los roles los vamos a colocar encima de const userSchema
+  role: { type: String, default: 'USER', enum: roles },
+  activo: { type: Boolean, default: true }
+});
+
+De tal forma que todo el arx. Quedará así:
+
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
+
+// Roles
+const roles = {
+    values: ['ADMIN', 'USER'],
+    message: '{VALUE} no es un rol válido'
+}
+
+const userSchema = new Schema({
+//Nombre es obligatorio y saltará el error Nombre obligatorio
+  nombre: {type: String, required: [true, 'Nombre obligatorio']},
+  email: { type: String, unique: true, required: [true, 'Email es necesario'] },
+  pass: { type: String, required: [true, 'Pass es necesario'] },
+  date: { type: Date, default: Date.now },
+  role: { type: String, default: 'USER', enum: roles },
+  activo: { type: Boolean, default: true }
+});
+
+// Convertir a modelo
+const User = mongoose.model('User', userSchema);
+
+module.exports = User;
+
+_______
+
+Ahora creo la ruta de user: llamado user.js
+
+Y ahí importo:
+
+import express from 'express';
+const router = express.Router();
+
+
+// importar el modelo user
+import User from '../models/user';
+
+
+// Agregar un nuevo user
+router.post('/nuevo-usuario', async(req, res) => {
+    const body = req.body;  
+    try {
+      const usuarioDB = await User.create(body);
+      res.status(200).json(usuarioDB); 
+    } catch (error) {
+      return res.status(500).json({
+        mensaje: 'Ocurrió un error',
+        error
+      })
+    }
+  });
+Y poner el export:
+
+module.exports = router;
+_____
+
+Este router que exportamos lo tenemos que utilizar en el app.js. En el app.js buscamos la línea donde hacíamos esto:
+
+app.use('/api', require('./routes/receta')) 
+
+Y la duplicamos justo debajo y reemplazamos receta por user:
+
+app.use('/api', require('./routes/user'))
+
+Ahora vamos a instalar un validar único de mongoose para que el email sea único:
+
+https://www.npmjs.com/package/mongoose-unique-validator
+
+npm i mongoose-unique-validator --save
+
+Me vuelvo a el modelo user.js y debajo de const Schema pongo:
+
+const uniqueValidator = require('mongoose-unique-validator');
+
+Uso esta constante debajo del const userSchema:
+
+// Validator
+userSchema.plugin(uniqueValidator, { message: 'Error, esperaba {PATH} único.' });
+
+Entonces me voy al email y le digo que tiene que ser único: debe quedar así:
+
+email: { type: String, unique: true, required: [true, 'Email es necesario'] },
+
+____
+
+Ahora vamos a encripatr la contraseña:
+
+En user.js de ROUTES:
+
+mIRO DEONDE ESTÁ "const body = req.body;"
+
+// Agregar un nuevo user
+router.post('/nuevo-usuario', async(req, res) => {
+    const body = req.body;  
+    try {
+      const usuarioDB = await User.create(body);
+      res.status(200).json(usuarioDB); 
+    } catch (error) {
+      return res.status(500).json({
+        mensaje: 'Ocurrió un error',
+        error
+      })
+    }
+  });
+
+Ahora lo reemplazo por: 
+
+
+const body = {
+    nombre: req.body.nombre,
+    email: req.body.email,
+    role: req.body.role
+  }
+
+  body.pass = bcrypt.hashSync(req.body.pass, saltRounds);
+
+TENEMOS QUE INSTALAR BCRYPT: https://www.npmjs.com/package/bcrypt
+
+npm i bcrypt
+
+Ahora ponemos debajo de los imports:
+
+// Hash Contraseña
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
+Ahora tenemos que esconder la contraseña cuando la traigamos con un json, de esta forma:
+
+Nos vamos al schema en models user.js
+
+Y ponemos justo debajo de: userSchema.plugin(uniqueValidator, { message: 'Error, esperaba {PATH} único.' });
+
+
+Esto:
+
+// Eliminar pass de respuesta JSON
+userSchema.methods.toJSON = function() {
+  var obj = this.toObject();
+  delete obj.pass;
+  return obj;
+ }
+
+Hacemos el put de user en la router del user:
+
+Y en el: {new: true}); añadimos la validación de usuario
+
+De manera que el put en el router usuario quedará así:
+
+// Put actualizar una receta
+  router.put('/user/:id', async(req, res) => {
+    const _id = req.params.id;
+    const body = req.body;
+    try {
+      const usuarioDB = await User.findByIdAndUpdate(id, body, {new: true, runValidators: true});
+      res.json(usuarioDB);  
+    } catch (error) {
+      return res.status(400).json({
+        mensaje: 'Ocurrió un error',
+        error
+      })
+    }
+  });
+
+Ahora nos encontramos con que la contraseña viene sin encintar y que hay campos de user que no queremos que el usuario pueda editar, para evitar todo esto nos apoyamos en underscore que nos permitirá agregar validaciones:
+
+npm install underscore --save
+
+
+Después del hash de contraseña pondremos:
+
+// Filtrar campos de PUT
+const _ = require('underscore');
+
+Cambiamos esto del put: const body = req.body;
+
+Por: let body = _.pick(req.body, ['nombre', 'email', 'activo', 'pass']);
+
+Es decir le indicamos los campos que puede cambiar el usuario
+
+Justo debajo de esta línea que acabamos de cambiar y antes del try ponemos:
+
+//Si modifico la contraseña, hay que encriptarla
+    if(body.pass){
+      body.pass = bcrypt.hashSync(req.body.pass, saltRounds);
+    }
+
+Ahora vamos a hacer en node la router del login (esquema (model) no):
+
+Importo:
+
+const express = require('express');
+const router = express.Router();
+
+A continuación en user: import User from '../models/user';
+
+Seguidamente:
+
+//Habrá que desincriptar la password:
+
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
+Termino el documento con:
+
+//Uso 'post' para que la info viaje oculta
+router.post('/', async(req, res) => {
+
+    let body = req.body;
+  
+    try {
+      // Buscamos email en DB
+      const usuarioDB = await User.findOne({email: body.email});
+  
+      // Evaluamos si existe el usuario en DB
+      if(!usuarioDB){
+        return res.status(400).json({
+          mensaje: 'Usuario! o contraseña inválidos',
+        });
+      }
+  
+      // Evaluamos la contraseña correcta
+      if( !bcrypt.compareSync(body.pass, usuarioDB.pass) ){
+        return res.status(400).json({
+          mensaje: 'Usuario o contraseña! inválidos',
+        });
+      }
+  
+      // Pasó las validaciones
+      return res.json({
+        usuarioDB,
+        token: 'fkajsdkf'
+      })
+      
+    } catch (error) {
+      return res.status(400).json({
+        mensaje: 'Ocurrio un error',
+        error
+      });
+    }
+  
+  });
+  
+module.exports = router;
+
+__________
+
+Me voy a app.js y debajo de esto:
+
+app.use('/api', require('./routes/receta'))
+app.use('/api', require('./routes/user'))
+
+Pongo esto:
+
+app.use('/login', require('./routes/login'));
+
+-----
+JWT (Jason web token)
+
+Usaremos esto para generar tokens (más seguridad):
+
+npm i jsonwebtoken --save
+
+
+Me voy a mi login.js y pongo antes del import user:
+
+// JWT
+const jwt = require('jsonwebtoken');
+
+Entonces, debajo del código de //evaluamos contraseña pongo:
+
+// Generar Token
+    let token = jwt.sign({
+        data: usuarioDB
+    }, 'secret', { expiresIn: 60 * 60 * 24 * 30}) // Expira en 30 días
+
+Y en els siguiente trozo de código, pongo el token, es decir cambio esto:
+
+token: 'fkajsdkf'
+
+Por esto:
+
+token: token
+
 
 
