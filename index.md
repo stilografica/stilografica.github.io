@@ -860,7 +860,6 @@ axios.defaults.baseURL = 'https://mi-node-2.herokuapp.com/api';
 ~~~
 // Si trabajamos en local
 axios.defaults.baseURL = 'http://localhost:3000/api';
-~~~
 
 Hago en el vue:
 ~~~
