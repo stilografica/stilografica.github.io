@@ -318,12 +318,12 @@ console.log(mongoose.connection.readyState);
 
 __________________________
 
-//Schemas
+### Schemas
 
 En la raiz Creo la carpeta "models"
 
 Y dentro de ella un js con el nombre de lo que contenga nuestra database, pe, nota.js y en ella pongo algo así:
-
+~~~
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
@@ -335,19 +335,18 @@ const notaSchema = new Schema({
   date:{type: Date, default: Date.now},
   activo: {type: Boolean, default: true}
 });
-
 // Convertir a modelo
 const Nota = mongoose.model('Nota', notaSchema);
 
 export default Nota;
-_______________________
+~~~
 
 Ahora creo las rutas:
 
 - Rutas (POST)
 
 Creo una carpeta en raiz llamada "routes" y creo un js con el mismo nombre que llamé al modelo y pongo esto:
-
+~~~
 import express from 'express';
 const router = express.Router();
 
@@ -370,9 +369,9 @@ router.post('/nueva-nota', async(req, res) => {
 
 // Exportamos la configuración de express app
 module.exports = router;
-
+~~~
 Me voy a mi app.js y coloco en las rutas, para llamar a la ruta que he creado
-
+~~~
 app.use('/api', require('./routes/nota'))
 
 // Get con parámetros
@@ -441,66 +440,70 @@ router.put('/nota/:id', async(req, res) => {
     })
   }
 });
+~~~
+### USO VARIABLES DE ENTORNO:https://bluuweb.github.io/node/05-db/#varibles-de-entorno
 
-//USO VARIABLES DE ENTORNO:https://bluuweb.github.io/node/05-db/#varibles-de-entorno
-
-Instalo: npm i dotenv
-
+Instalo: 
+ ~~~
+ npm i dotenv
+~~~
 https://www.npmjs.com/package/dotenv
 
 En el app.js debería poner después de importar express:
-
+~~~
 require('dotenv').config()
-
-//Creo en la raíz el directorio .env
+~~~
+Creo en la raíz el directorio .env
 
 Y pongo: 
-
+~~~
 PORT=3000 (el puerto que haya puesto)
 USUARIO=xxx
 PASSWORD=xxx
 DBNAME=xxx
-
+~~~
 Depues hago los cambios en app.js
-
+~~~
 const uri = `mongodb+srv://${process.env.USUARIO}:${process.env.PASSWORD}@cluster0.ncdk5.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
-
-//e INCLUYO EL .ENV EN GITINGNORE
-
+~~~
+e INCLUYO EL .ENV EN GITINGNORE
+~~~
 node_modules
 .env
-
+~~~
 Puedes poner las variables de entorno en el servidor heroku: https://devcenter.heroku.com/articles/config-vars
 
-iNSTALAMOS para utilizar x-www-form-urlencoded: npm i body-parser
-
+iNSTALAMOS para utilizar x-www-form-urlencoded:
+ ~~~
+npm i body-parser
+~~~
 
 Añado en app.js:
-
+~~~
 import bodyParser from 'body-parser';
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
-
+~~~
 Recordar!!! Comentar las rutas de hello world de node y poner en su lugar: 
-
+~~~
 app.use('/api', require('./routes/nota'))
-
-Autenticación:
+~~~
+### Autenticación:
 
 Creo un nuevo modelo llamado user (en models, donde ja está el de receta)
 
 Importo mongoose y el esquema:
-
+~~~
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
-
+~~~
 __________
 
 Y creo la constante del esquema de user:
-
+~~~
 const userSchema = new Schema({
 //Nombre es obligatorio y saltará el error Nombre obligatorio
   nombre: {type: String, required: [true, 'Nombre obligatorio']},
@@ -511,9 +514,9 @@ const userSchema = new Schema({
   role: { type: String, default: 'USER', enum: roles },
   activo: { type: Boolean, default: true }
 });
-
-De tal forma que todo el arx. Quedará así:
-
+~~~
+#### De tal forma que todo el arx. Quedará así:
+~~~
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
@@ -537,16 +540,15 @@ const userSchema = new Schema({
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
-
+~~~
 _______
 
 Ahora creo la ruta de user: llamado user.js
 
 Y ahí importo:
-
+~~~
 import express from 'express';
 const router = express.Router();
-
 
 // importar el modelo user
 import User from '../models/user';
@@ -568,43 +570,42 @@ router.post('/nuevo-usuario', async(req, res) => {
 Y poner el export:
 
 module.exports = router;
-_____
+~~~
 
 Este router que exportamos lo tenemos que utilizar en el app.js. En el app.js buscamos la línea donde hacíamos esto:
-
+~~~
 app.use('/api', require('./routes/receta')) 
-
+~~~
 Y la duplicamos justo debajo y reemplazamos receta por user:
-
+~~~
 app.use('/api', require('./routes/user'))
-
+~~~
 Ahora vamos a instalar un validar único de mongoose para que el email sea único:
 
 https://www.npmjs.com/package/mongoose-unique-validator
-
+~~~
 npm i mongoose-unique-validator --save
-
+~~~
 Me vuelvo a el modelo user.js y debajo de const Schema pongo:
-
+~~~
 const uniqueValidator = require('mongoose-unique-validator');
-
+~~~
 Uso esta constante debajo del const userSchema:
-
+~~~
 // Validator
 userSchema.plugin(uniqueValidator, { message: 'Error, esperaba {PATH} único.' });
-
+~~~
 Entonces me voy al email y le digo que tiene que ser único: debe quedar así:
-
+~~~
 email: { type: String, unique: true, required: [true, 'Email es necesario'] },
-
-____
+~~~
 
 Ahora vamos a encripatr la contraseña:
 
 En user.js de ROUTES:
 
 mIRO DEONDE ESTÁ "const body = req.body;"
-
+~~~
 // Agregar un nuevo user
 router.post('/nuevo-usuario', async(req, res) => {
     const body = req.body;  
@@ -618,10 +619,10 @@ router.post('/nuevo-usuario', async(req, res) => {
       })
     }
   });
-
+~~~
 Ahora lo reemplazo por: 
 
-
+~~~
 const body = {
     nombre: req.body.nombre,
     email: req.body.email,
@@ -629,17 +630,17 @@ const body = {
   }
 
   body.pass = bcrypt.hashSync(req.body.pass, saltRounds);
-
+~~~
 TENEMOS QUE INSTALAR BCRYPT: https://www.npmjs.com/package/bcrypt
-
+~~~
 npm i bcrypt
-
+~~~
 Ahora ponemos debajo de los imports:
-
+~~~
 // Hash Contraseña
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-
+~~~
 Ahora tenemos que esconder la contraseña cuando la traigamos con un json, de esta forma:
 
 Nos vamos al schema en models user.js
@@ -648,20 +649,20 @@ Y ponemos justo debajo de: userSchema.plugin(uniqueValidator, { message: 'Error,
 
 
 Esto:
-
+~~~
 // Eliminar pass de respuesta JSON
 userSchema.methods.toJSON = function() {
   var obj = this.toObject();
   delete obj.pass;
   return obj;
  }
-
+~~~
 Hacemos el put de user en la router del user:
 
 Y en el: {new: true}); añadimos la validación de usuario
 
 De manera que el put en el router usuario quedará así:
-
+~~~
 // Put actualizar una receta
   router.put('/user/:id', async(req, res) => {
     const _id = req.params.id;
@@ -676,48 +677,52 @@ De manera que el put en el router usuario quedará así:
       })
     }
   });
-
+~~~
 Ahora nos encontramos con que la contraseña viene sin encintar y que hay campos de user que no queremos que el usuario pueda editar, para evitar todo esto nos apoyamos en underscore que nos permitirá agregar validaciones:
-
+~~~
 npm install underscore --save
-
+~~~
 
 Después del hash de contraseña pondremos:
-
+~~~
 // Filtrar campos de PUT
 const _ = require('underscore');
-
-Cambiamos esto del put: const body = req.body;
-
-Por: let body = _.pick(req.body, ['nombre', 'email', 'activo', 'pass']);
-
+~~~
+Cambiamos esto del put:
+ ~~~
+ const body = req.body;
+~~~
+Por: 
+~~~
+let body = _.pick(req.body, ['nombre', 'email', 'activo', 'pass']);
+~~~
 Es decir le indicamos los campos que puede cambiar el usuario
 
 Justo debajo de esta línea que acabamos de cambiar y antes del try ponemos:
-
+~~~
 //Si modifico la contraseña, hay que encriptarla
     if(body.pass){
       body.pass = bcrypt.hashSync(req.body.pass, saltRounds);
     }
-
+~~~
 Ahora vamos a hacer en node la router del login (esquema (model) no):
 
 Importo:
-
+~~~
 const express = require('express');
 const router = express.Router();
-
+~~~
 A continuación en user: import User from '../models/user';
 
 Seguidamente:
 
 //Habrá que desincriptar la password:
-
+~~~
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-
+~~~
 Termino el documento con:
-
+~~~
 //Uso 'post' para que la info viaje oculta
 router.post('/', async(req, res) => {
 
@@ -757,45 +762,44 @@ router.post('/', async(req, res) => {
   });
   
 module.exports = router;
-
-__________
+~~~
 
 Me voy a app.js y debajo de esto:
-
+~~~
 app.use('/api', require('./routes/receta'))
 app.use('/api', require('./routes/user'))
-
+~~~
 Pongo esto:
-
+~~~
 app.use('/login', require('./routes/login'));
-
+~~~
 -----
-JWT (Jason web token)
+### JWT (Jason web token)
 
 Usaremos esto para generar tokens (más seguridad):
-
+~~~
 npm i jsonwebtoken --save
-
+~~~
 
 Me voy a mi login.js y pongo antes del import user:
-
+~~~
 // JWT
 const jwt = require('jsonwebtoken');
-
+~~~
 Entonces, debajo del código de //evaluamos contraseña pongo:
-
+~~~
 // Generar Token
     let token = jwt.sign({
         data: usuarioDB
     }, 'secret', { expiresIn: 60 * 60 * 24 * 30}) // Expira en 30 días
-
+~~~
 Y en els siguiente trozo de código, pongo el token, es decir cambio esto:
 
 token: 'fkajsdkf'
 
 Por esto:
-
+~~~
 token: token
 
-
+~~~
 
