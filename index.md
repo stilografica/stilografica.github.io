@@ -802,4 +802,174 @@ Por esto:
 token: token
 
 ~~~
+Continuará...
+
+## Mi APP VUE ❤️
+~~~
+yarn serve / npm run serve 
+~~~
+https://bluuweb.github.io/mevn/03-vue/
+
+Herramientas estándar para el desarrollo de Vue.js: VUE CLI
+vuecli: https://cli.vuejs.org/ (es de forma global en todo el equipo):
+~~~
+yarn global add @vue/cli
+~~~
+creo carpeta del proyecto y la abro en consola y pongo:
+ ~~~
+vue create <nombre>
+~~~
+Añadir bootstrap a vue:
+Bootstrap-vue:
+~~~
+  # With npm
+npm install vue bootstrap bootstrap-vue
+
+# With yarn
+yarn add vue bootstrap bootstrap-vue
+~~~
+En main: 
+~~~
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
+// Import Bootstrap an BootstrapVue CSS files (order is important)
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+// Make BootstrapVue available throughout your project
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
+~~~
+Instalamos Axios
+~~~
+npm install --save axios vue-axios
+~~~
+
+Esto en el main para hacer las llamadas a la api
+~~~
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+ 
+Vue.use(VueAxios, axios)
+~~~
+Despues de use.axios poner:
+~~~
+// Agregamos la URL base de nuestra API
+axios.defaults.baseURL = 'https://mi-node-2.herokuapp.com/api';
+~~~
+// Si trabajamos en local
+axios.defaults.baseURL = 'http://localhost:3000/api';
+~~~
+
+Hago en el vue:
+~~~
+yarn serve
+~~~
+
+tener activa la base de datos en https://cloud.mongodb.com/
+
+Y ejecuto node también 
+~~~
+npm run devbabel
+~~~
+
+### SI FALLA MONGO, Mira que ip tienes y la colocas en security/network
+
+NOTA: Al usar axios-vue de que puedo usar el this.axios.get… en cualquier médotodo
+
+Al no usar vuex, hago las llamadas a la api desde el componente en create() rellenando un array de notas, en este caso que estará en data:
+
+~~~
+<script>
+export default {
+  name: 'Notas',
+  data() {
+    return {
+      notas: [],
+    };
+  },
+  created() {
+    this.listarNotas();
+  },
+  methods: {
+    listarNotas() {
+      this.axios.get('/nota')
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((e) => {
+          console.log(e.response);
+        });
+    },
+  },
+};
+</script>
+
+~~~
+
+A qué ruta llamamos con axios? A la que está configurada en main.js, pero ya está automática así que solo tengo que poner el ‘/nota’, porque nota? Porque en mi backend en rutas lo configuré así:
+~~~
+// Get con todas las notas
+router.get('/nota', async(req, res) => {
+  try {
+    const notaDb = await Nota.find();
+    res.json(notaDb);
+  } catch (error) {
+    return res.status(400).json({
+      mensaje: 'Ocurrio un error',
+      error
+    })
+  }
+});
+~~~
+Si te da error, primero mira que tengas configurada tu ip en mongo db en security/network access y si sigue fallando comprueba que el puerto que tienes en el backend, en la variable de entorno es la misma que la que tienes en front, en main.js: hacemos
+
+rECUERDA PONR EN LA RUTA LA NUEVA VISTA CREADA:
+~~~
+app.use('/api', require('./routes/receta'))
+~~~
+
+Abrimos consola de nuestra aplicación (ahora es el que era el backend, recuerda! Y ponemos:
+~~~
+heroku login
+~~~
+git init
+git add.
+gir commit -m””
+~~~
+git push heroku master
+~~~
+Y ponemos la dirección que esté en la web de heroku ir a nuestra app en el main.js de que, en los archivos de que, no backend:
+
+Para pasar a producción hago:
+~~~
+npm run-script build
+~~~
+en mi front y después todo lo que hay DENTRO de la nueva carpeta “dis” en la carpeta public de mi backend, tengo que eliminar el index.html que había puesto en él.
+
+Asegurarse que el servidor estaba iniciado y si ahora voy a mi navegador y pongo: localhost:3001 (o el puerto en el que tenía el backend) veré mi aplicación. 
+
+Comprobamos el funcionamiento de la aplicación para verificar que está todo correcto.
+
+Abrimos consola de nuestra aplicación (ahora es el que era el backend, recuerda! Y ponemos:
+~~~
+heroku login
+~~~
+~~~
+git init
+git add.
+gir commit -m””
+~~~
+~~~
+git push heroku master
+~~~
+
+STORE REVISAR TRABAJO DE: 
+
+https://github.com/carlosazaustre/vue-trello/tree/master/src/store
+
+https://github.com/bradtraversy/vuex_todo_manager/tree/master/src
+
+
 
